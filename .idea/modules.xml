@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WBITDD-20161114.iml" filepath="$PROJECT_DIR$/.idea/modules/WBITDD-20161114.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WBITDD-20161114_main.iml" filepath="$PROJECT_DIR$/.idea/modules/WBITDD-20161114_main.iml" group="WBITDD-20161114" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WBITDD-20161114_test.iml" filepath="$PROJECT_DIR$/.idea/modules/WBITDD-20161114_test.iml" group="WBITDD-20161114" />
+    </modules>
+  </component>
+</project>
