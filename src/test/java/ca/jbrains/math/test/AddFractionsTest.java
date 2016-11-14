@@ -80,7 +80,7 @@ public class AddFractionsTest {
             else if (other.denominator != 1)
                 return other;
             else
-                return new Fraction(this.integerValue + other.integerValue);
+                return new Fraction(this.integerValue + other.integerValue, this.denominator);
         }
 
         public int intValue() {
