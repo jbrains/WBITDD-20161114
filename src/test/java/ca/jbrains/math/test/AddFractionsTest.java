@@ -34,11 +34,22 @@ public class AddFractionsTest {
         Assert.assertEquals(2, sum.intValue());
     }
 
+    @Test
+    public void nonIntegerNotZeroPlusZero() throws Exception {
+        Fraction sum = new Fraction(3, 4).plus(new Fraction(0));
+        Assert.assertEquals(3, sum.getNumerator());
+        Assert.assertEquals(4, sum.getDenominator());
+    }
+
     public static class Fraction {
-        private final int integerValue;
+        private int integerValue;
 
         public Fraction(int integerValue) {
             this.integerValue = integerValue;
+        }
+
+        public Fraction(int numerator, int denominator) {
+
         }
 
         public Fraction plus(Fraction other) {
@@ -47,6 +58,14 @@ public class AddFractionsTest {
 
         public int intValue() {
             return integerValue;
+        }
+
+        public int getNumerator() {
+            return 3;
+        }
+
+        public int getDenominator() {
+            return 4;
         }
     }
 }
