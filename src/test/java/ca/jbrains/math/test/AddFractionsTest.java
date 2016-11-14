@@ -28,6 +28,12 @@ public class AddFractionsTest {
         Assert.assertEquals(12, sum.intValue());
     }
 
+    @Test
+    public void negativeIntegers() throws Exception {
+        Fraction sum = new Fraction(-9).plus(new Fraction(11));
+        Assert.assertEquals(2, sum.intValue());
+    }
+
     public static class Fraction {
         private final int integerValue;
 
