@@ -48,6 +48,13 @@ public class AddFractionsTest {
         Assert.assertEquals(7, sum.getDenominator());
     }
 
+    @Test
+    public void bothNotZeroWithSameDenominator() throws Exception {
+        Fraction sum = new Fraction(1, 7).plus(new Fraction(5, 7));
+        Assert.assertEquals(6, sum.getNumerator());
+        Assert.assertEquals(7, sum.getDenominator());
+    }
+
     public static class Fraction {
         private int numerator;
         private int denominator;
@@ -66,7 +73,9 @@ public class AddFractionsTest {
         }
 
         public Fraction plus(Fraction other) {
-            if (this.denominator != 1)
+            if (this.denominator != 1 && other.denominator != 1)
+                return new Fraction(this.integerValue + other.integerValue, this.denominator);
+            else if (this.denominator != 1)
                 return this;
             else if (other.denominator != 1)
                 return other;
