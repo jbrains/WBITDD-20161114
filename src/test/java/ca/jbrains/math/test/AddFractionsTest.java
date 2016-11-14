@@ -100,6 +100,9 @@ public class AddFractionsTest {
         }
 
         public Fraction(int numerator, int denominator) {
+            if (denominator == 0)
+                throw new IllegalArgumentException("Fractions may not have 0 denominator.");
+
             this.numerator = numerator;
             this.denominator = denominator;
         }
