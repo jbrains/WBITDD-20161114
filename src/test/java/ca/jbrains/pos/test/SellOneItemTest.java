@@ -65,16 +65,14 @@ public class SellOneItemTest {
                 display.setText("Scanning error: empty barcode");
                 return;
             }
-            
+
             final Map<String, String> pricesByBarcode
                     = new HashMap<String, String>() {{
                 put("12345", "EUR 7.50");
                 put("23456", "EUR 12.95");
             }};
 
-            if ("12345".equals(barcode))
-                display.setText(pricesByBarcode.get(barcode));
-            else if ("23456".equals(barcode))
+            if (pricesByBarcode.containsKey(barcode))
                 display.setText(pricesByBarcode.get(barcode));
             else
                 display.setText(
