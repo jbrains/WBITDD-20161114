@@ -82,19 +82,13 @@ public class AddFractionsTest {
         }
 
         public Fraction plus(Fraction other) {
-            if (this.denominator == 2 && other.denominator == 3)
+            if (this.denominator == other.denominator)
+                return new Fraction(this.integerValue + other.integerValue, this.denominator);
+            else
                 return new Fraction(
                         other.numerator * this.denominator
                                 + other.denominator * this.numerator,
                         this.denominator * other.denominator);
-            else if (this.denominator == other.denominator)
-                return new Fraction(this.integerValue + other.integerValue, this.denominator);
-            else if (this.denominator != 1)
-                return this;
-            else if (other.denominator != 1)
-                return other;
-            else
-                return new Fraction(this.integerValue + other.integerValue, this.denominator);
         }
 
         public int intValue() {
