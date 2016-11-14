@@ -108,15 +108,10 @@ public class AddFractionsTest {
         }
 
         public Fraction plus(Fraction other) {
-            if (this.denominator == other.denominator)
-                return new Fraction(
-                        this.numerator + other.numerator,
-                        this.denominator);
-            else
-                return new Fraction(
-                        other.numerator * this.denominator
-                                + other.denominator * this.numerator,
-                        this.denominator * other.denominator);
+            return new Fraction(
+                    other.numerator * this.denominator
+                            + other.denominator * this.numerator,
+                    this.denominator * other.denominator);
         }
 
         @Override
