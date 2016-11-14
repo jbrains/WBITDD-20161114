@@ -40,6 +40,19 @@ public class SellOneItemTest {
         );
     }
 
+    @Test
+    public void emptyBarcode() throws Exception {
+        final Display display = new Display();
+        final Sale sale = new Sale(display);
+
+        sale.onBarcode("");
+
+        Assert.assertEquals(
+                "Scanning error: empty barcode",
+                display.getText()
+        );
+    }
+
     public static class Sale {
         private Display display;
 
@@ -48,6 +61,11 @@ public class SellOneItemTest {
         }
 
         public void onBarcode(String barcode) {
+            if ("".equals(barcode)) {
+                display.setText("Scanning error: empty barcode");
+                return;
+            }
+            
             final Map<String, String> pricesByBarcode
                     = new HashMap<String, String>() {{
                 put("12345", "EUR 7.50");
