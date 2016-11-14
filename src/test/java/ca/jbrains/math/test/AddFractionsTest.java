@@ -61,14 +61,11 @@ public class AddFractionsTest {
         Assert.assertEquals(new Fraction(11, 6), sum);
     }
 
-    @Ignore("Work in progress")
     @Test
     public void denominatorsWithCommonFactors() throws Exception {
         Fraction sum = new Fraction(1, 4)
                 .plus(new Fraction(1, 2));
-
-        Assert.assertEquals(3, sum.getNumerator());
-        Assert.assertEquals(4, sum.getDenominator());
+        Assert.assertEquals(new Fraction(3, 4), sum);
     }
 
     public static class Fraction {
@@ -96,14 +93,6 @@ public class AddFractionsTest {
                         this.denominator * other.denominator);
         }
 
-        public int getNumerator() {
-            return numerator;
-        }
-
-        public int getDenominator() {
-            return denominator;
-        }
-
         @Override
         public boolean equals(Object other) {
             if (other instanceof Fraction) {
@@ -113,6 +102,16 @@ public class AddFractionsTest {
             } else {
                 return false;
             }
+        }
+
+        @Override
+        public int hashCode() {
+            return 0;
+        }
+
+        @Override
+        public String toString() {
+            return String.format("%d/%d", numerator, denominator);
         }
     }
 }
