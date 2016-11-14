@@ -118,6 +118,9 @@ public class AddFractionsTest {
         public boolean equals(Object other) {
             if (other instanceof Fraction) {
                 Fraction that = (Fraction) other;
+
+                // a/b = c/d <=> ad = bc
+                // You could look it up!
                 return (this.numerator * that.denominator
                         == that.numerator * this.denominator);
             } else {
