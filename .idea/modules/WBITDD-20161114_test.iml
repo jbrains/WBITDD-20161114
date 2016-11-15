@@ -13,6 +13,7 @@
     <orderEntry type="module" module-name="WBITDD-20161114_main" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
     <orderEntry type="library" name="Gradle: org.jmock:jmock:2.8.2" level="project" />
+    <orderEntry type="library" name="Gradle: org.jmock:jmock-junit4:2.8.2" level="project" />
     <orderEntry type="library" name="Gradle: org.codehaus.groovy:groovy-all:2.4.7" level="project" />
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="library" name="Gradle: org.jmock:jmock-testjar:2.8.2" level="project" />
