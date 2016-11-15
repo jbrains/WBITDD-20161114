@@ -1,0 +1,1 @@
+display.Received().DisplayPrice(Price.Cents(795));

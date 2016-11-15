@@ -1,0 +1,3 @@
+catalog.FindPrice("12345").Returns(Price.Cents(795));
+
+display.Received().DisplayPrice(Price.Cents(795));

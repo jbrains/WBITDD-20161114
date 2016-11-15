@@ -1,0 +1,6 @@
+var catalog = Substitute.For<ICatalog>();
+var display = Substitute.For<IDisplay>();
+
+catalog.FindPrice("12345").Returns(Price.Cents(795));
+
+display.Received().DisplayPrice(Price.Cents(795));
