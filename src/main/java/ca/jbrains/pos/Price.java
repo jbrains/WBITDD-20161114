@@ -11,8 +11,12 @@ public class Price {
         return new Price(centsValue);
     }
 
+    public double euro() {
+        return centsValue / 100.0d;
+    }
+
     @Override
     public String toString() {
-        return "a Price";
+        return String.format("a Price {%d cents}", centsValue);
     }
 }
