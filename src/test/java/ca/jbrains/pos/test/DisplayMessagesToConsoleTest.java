@@ -12,26 +12,34 @@ import java.io.PrintStream;
 
 public class DisplayMessagesToConsoleTest {
     private PrintStream productionStdout;
+    private ByteArrayOutputStream canvas;
 
     @Before
-    public void rememberGlobals() throws Exception {
+    public void substituteStdout() throws Exception {
         productionStdout = System.out;
+        canvas = new ByteArrayOutputStream(100);
+        System.setOut(new PrintStream(canvas));
     }
 
     @After
-    public void resetGlobals() throws Exception {
+    public void resetStdout() throws Exception {
         System.setOut(productionStdout);
     }
 
     @Test
     public void emptyBarcode() throws Exception {
-        final ByteArrayOutputStream canvas = new ByteArrayOutputStream(100);
-        System.setOut(new PrintStream(canvas));
-
         new PrintWriterDisplay().displayScannedEmptyBarcodeMessage();
 
         final String displayText = canvas.toString("UTF-8").trim();
         Assert.assertEquals("Scanning error: empty barcode", displayText);
+    }
+
+    @Test
+    public void productNotFound() throws Exception {
+        new PrintWriterDisplay().displayProductNotFoundMessage("23476123782364");
+
+        final String displayText = canvas.toString("UTF-8").trim();
+        Assert.assertEquals("Product not found for 23476123782364", displayText);
     }
 
     public static class PrintWriterDisplay implements Display {
@@ -41,6 +49,7 @@ public class DisplayMessagesToConsoleTest {
 
         @Override
         public void displayProductNotFoundMessage(String barcodeNotFound) {
+            System.out.println(String.format("Product not found for %s", barcodeNotFound));
         }
 
         @Override
