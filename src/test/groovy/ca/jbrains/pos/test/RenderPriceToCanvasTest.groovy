@@ -3,8 +3,8 @@ package ca.jbrains.pos.test
 import ca.jbrains.pos.Price
 import spock.lang.Specification
 
-class DisplayPriceToConsoleTest extends Specification {
-    def "display price"() {
+class RenderPriceToCanvasTest extends Specification {
+    def "happy path"() {
         given:
         Canvas canvas = Mock(Canvas)
         MessageFormat messageFormat = Mock(MessageFormat)
