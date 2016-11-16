@@ -31,5 +31,6 @@ class DisplayPriceToConsoleTest extends Specification {
         where:
         price            || displayText
         Price.cents(175) || "EUR 1.75"
+        Price.cents(230) || "EUR 2.30"
     }
 }
