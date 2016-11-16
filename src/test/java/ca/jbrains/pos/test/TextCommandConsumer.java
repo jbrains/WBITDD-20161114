@@ -1,5 +1,7 @@
 package ca.jbrains.pos.test;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.StringReader;
 
 class TextCommandConsumer {
@@ -9,7 +11,9 @@ class TextCommandConsumer {
         this.barcodeScannedListener = barcodeScannedListener;
     }
 
-    public void consumeBarcodeCommands(StringReader commandSource) {
-        barcodeScannedListener.onBarcode("::barcode::");
+    public void consumeBarcodeCommands(StringReader commandSource) throws IOException {
+        final String line = new BufferedReader(commandSource).readLine();
+        if (line != null)
+            barcodeScannedListener.onBarcode(line);
     }
 }
