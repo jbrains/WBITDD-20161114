@@ -4,18 +4,27 @@ import ca.jbrains.pos.Display;
 import ca.jbrains.pos.Price;
 
 public class PrintWriterDisplay implements Display {
+
+    private EnglishLanguageFormat englishLanguageFormat
+            = new EnglishLanguageFormat();
+
     @Override
     public void displayPrice(Price price) {
-        System.out.println(new EnglishLanguageFormat().formatPrice(price));
+        render(englishLanguageFormat.formatPrice(price));
+    }
+
+    private void render(String message) {
+        System.out.println(message);
     }
 
     @Override
     public void displayProductNotFoundMessage(String barcodeNotFound) {
-        System.out.println(new EnglishLanguageFormat().formatProductNotFoundMessage(barcodeNotFound));
+        render(englishLanguageFormat.formatProductNotFoundMessage(barcodeNotFound));
     }
 
     @Override
     public void displayScannedEmptyBarcodeMessage() {
-        System.out.println("Scanning error: empty barcode");
+        render(englishLanguageFormat.formatScannedEmptyBarcodeMessage());
     }
+
 }
