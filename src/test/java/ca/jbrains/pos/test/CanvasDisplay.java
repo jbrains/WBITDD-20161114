@@ -4,26 +4,26 @@ import ca.jbrains.pos.Display;
 import ca.jbrains.pos.Price;
 
 public class CanvasDisplay implements Display {
-    private final Canvas canvas;
+    private final StandardOutCanvas standardOutCanvas;
     private final EnglishLanguageFormat englishLanguageFormat;
 
-    public CanvasDisplay(Canvas canvas, EnglishLanguageFormat messageFormat) {
-        this.canvas = canvas;
+    public CanvasDisplay(StandardOutCanvas standardOutCanvas, EnglishLanguageFormat messageFormat) {
+        this.standardOutCanvas = standardOutCanvas;
         englishLanguageFormat = messageFormat;
     }
 
     @Override
     public void displayPrice(Price price) {
-        canvas.render(englishLanguageFormat.formatPrice(price));
+        standardOutCanvas.render(englishLanguageFormat.formatPrice(price));
     }
 
     @Override
     public void displayProductNotFoundMessage(String barcodeNotFound) {
-        canvas.render(englishLanguageFormat.formatProductNotFoundMessage(barcodeNotFound));
+        standardOutCanvas.render(englishLanguageFormat.formatProductNotFoundMessage(barcodeNotFound));
     }
 
     @Override
     public void displayScannedEmptyBarcodeMessage() {
-        canvas.render(englishLanguageFormat.formatScannedEmptyBarcodeMessage());
+        standardOutCanvas.render(englishLanguageFormat.formatScannedEmptyBarcodeMessage());
     }
 }
