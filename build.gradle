@@ -16,6 +16,7 @@ dependencies {
             'junit:junit:4.12',
             'org.jmock:jmock:2.8.2',
             'org.jmock:jmock-junit4:2.8.2',
+            'org.spockframework:spock-core:1.1-groovy-2.4-rc-3',
             'org.codehaus.groovy:groovy-all:2.4.7'
     )
 }
