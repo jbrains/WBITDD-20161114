@@ -11,7 +11,7 @@ public class PrintWriterDisplay implements Display {
 
     @Override
     public void displayProductNotFoundMessage(String barcodeNotFound) {
-        System.out.println(String.format("Product not found for %s", barcodeNotFound));
+        System.out.println(new EnglishLanguageFormat().formatProductNotFoundMessage(barcodeNotFound));
     }
 
     @Override
