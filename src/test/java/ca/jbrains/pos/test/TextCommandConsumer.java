@@ -11,9 +11,10 @@ class TextCommandConsumer {
         this.barcodeScannedListener = barcodeScannedListener;
     }
 
-    public void consumeBarcodeCommands(StringReader commandSource) throws IOException {
-        final String line = new BufferedReader(commandSource).readLine();
-        if (line != null)
-            barcodeScannedListener.onBarcode(line);
+    public void consumeBarcodeCommands(StringReader commandSource) {
+        new BufferedReader(commandSource).lines()
+                .map(String::trim)
+                .filter((line) -> !line.isEmpty())
+                .forEach(barcodeScannedListener::onBarcode);
     }
 }
