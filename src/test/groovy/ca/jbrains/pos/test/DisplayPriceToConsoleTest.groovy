@@ -5,28 +5,19 @@ import spock.lang.Specification
 import spock.lang.Unroll
 
 class DisplayPriceToConsoleTest extends Specification {
-    PrintStream productionStdout
-
-    def setup() {
-        productionStdout = System.out
-    }
-
-    def cleanup() {
-        System.setOut(productionStdout)
-    }
-
     @Unroll
     def "display price of #price.centsValue cents"() {
-        def canvas = new ByteArrayOutputStream()
-
         given:
-        System.setOut(new PrintStream(canvas))
+        Canvas canvas = Mock(Canvas)
 
         when:
-        new CanvasDisplay(new StandardOutCanvas(), new EnglishLanguageMessageFormat()).displayPrice(price)
+        // SMELL Why would we go through the CanvasDisplay,
+        // when we really want to check the results of
+        // EnglishLanguageMessageFormat directly?
+        new CanvasDisplay(canvas, new EnglishLanguageMessageFormat()).displayPrice(price)
 
         then:
-        displayText == canvas.toString("UTF-8").trim()
+        1 * canvas.render(displayText)
 
         where:
         price                  || displayText
