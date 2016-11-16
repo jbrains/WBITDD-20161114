@@ -1,5 +1,7 @@
 package ca.jbrains.pos.test
 
+import ca.jbrains.pos.BarcodeScannedListener
+import ca.jbrains.pos.TextCommandConsumer
 import spock.lang.Specification
 
 

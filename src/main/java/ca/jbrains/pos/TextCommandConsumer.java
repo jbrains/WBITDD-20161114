@@ -1,12 +1,10 @@
-package ca.jbrains.pos.test;
+package ca.jbrains.pos;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.Reader;
-import java.io.StringReader;
 import java.util.stream.Stream;
 
-class TextCommandConsumer {
+public class TextCommandConsumer {
     private final BarcodeScannedListener barcodeScannedListener;
 
     public TextCommandConsumer(BarcodeScannedListener barcodeScannedListener) {
