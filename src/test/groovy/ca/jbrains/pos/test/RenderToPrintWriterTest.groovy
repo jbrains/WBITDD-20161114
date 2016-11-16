@@ -1,5 +1,6 @@
 package ca.jbrains.pos.test
 
+import ca.jbrains.pos.PrintWriterCanvas
 import spock.lang.Specification
 
 // This test doesn't care what you're rendering!

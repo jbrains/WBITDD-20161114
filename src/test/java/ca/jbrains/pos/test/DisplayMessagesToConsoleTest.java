@@ -1,5 +1,8 @@
 package ca.jbrains.pos.test;
 
+import ca.jbrains.pos.CanvasDisplay;
+import ca.jbrains.pos.EnglishLanguageMessageFormat;
+import ca.jbrains.pos.PrintWriterCanvas;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,5 +1,6 @@
-package ca.jbrains.pos.test;
+package ca.jbrains.pos;
 
+import ca.jbrains.pos.MessageFormat;
 import ca.jbrains.pos.Price;
 
 public class EnglishLanguageMessageFormat implements MessageFormat {

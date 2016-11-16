@@ -1,4 +1,6 @@
-package ca.jbrains.pos.test;
+package ca.jbrains.pos;
+
+import ca.jbrains.pos.Canvas;
 
 import java.io.PrintWriter;
 import java.io.Writer;

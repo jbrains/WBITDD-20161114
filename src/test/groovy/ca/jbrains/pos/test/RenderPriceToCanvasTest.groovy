@@ -1,5 +1,8 @@
 package ca.jbrains.pos.test
 
+import ca.jbrains.pos.Canvas
+import ca.jbrains.pos.CanvasDisplay
+import ca.jbrains.pos.MessageFormat
 import ca.jbrains.pos.Price
 import spock.lang.Specification
 
