@@ -24,6 +24,6 @@ class FormatPriceTest extends Specification {
     }
 
     def formatPrice(def price) {
-        return new EnglishLanguageFormat().formatPrice(price)
+        return new EnglishLanguageMessageFormat().formatPrice(price)
     }
 }
