@@ -1,7 +1,5 @@
 package ca.jbrains.pos.test;
 
-import ca.jbrains.pos.Display;
-import ca.jbrains.pos.Price;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -40,21 +38,5 @@ public class DisplayMessagesToConsoleTest {
 
         final String displayText = canvas.toString("UTF-8").trim();
         Assert.assertEquals("Product not found for 23476123782364", displayText);
-    }
-
-    public static class PrintWriterDisplay implements Display {
-        @Override
-        public void displayPrice(Price price) {
-        }
-
-        @Override
-        public void displayProductNotFoundMessage(String barcodeNotFound) {
-            System.out.println(String.format("Product not found for %s", barcodeNotFound));
-        }
-
-        @Override
-        public void displayScannedEmptyBarcodeMessage() {
-            System.out.println("Scanning error: empty barcode");
-        }
     }
 }
