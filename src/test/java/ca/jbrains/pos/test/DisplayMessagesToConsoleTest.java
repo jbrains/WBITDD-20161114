@@ -26,7 +26,7 @@ public class DisplayMessagesToConsoleTest {
 
     @Test
     public void emptyBarcode() throws Exception {
-        new PrintWriterDisplay().displayScannedEmptyBarcodeMessage();
+        new CanvasDisplay().displayScannedEmptyBarcodeMessage();
 
         final String displayText = canvas.toString("UTF-8").trim();
         Assert.assertEquals("Scanning error: empty barcode", displayText);
@@ -34,7 +34,7 @@ public class DisplayMessagesToConsoleTest {
 
     @Test
     public void productNotFound() throws Exception {
-        new PrintWriterDisplay().displayProductNotFoundMessage("23476123782364");
+        new CanvasDisplay().displayProductNotFoundMessage("23476123782364");
 
         final String displayText = canvas.toString("UTF-8").trim();
         Assert.assertEquals("Product not found for 23476123782364", displayText);

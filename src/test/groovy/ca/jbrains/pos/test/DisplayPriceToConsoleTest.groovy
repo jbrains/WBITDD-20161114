@@ -23,7 +23,7 @@ class DisplayPriceToConsoleTest extends Specification {
         System.setOut(new PrintStream(canvas))
 
         when:
-        new PrintWriterDisplay().displayPrice(price)
+        new CanvasDisplay().displayPrice(price)
 
         then:
         displayText == canvas.toString("UTF-8").trim()

@@ -3,7 +3,7 @@ package ca.jbrains.pos.test;
 import ca.jbrains.pos.Display;
 import ca.jbrains.pos.Price;
 
-public class PrintWriterDisplay implements Display {
+public class CanvasDisplay implements Display {
     private final Canvas canvas = new Canvas();
     private final EnglishLanguageFormat englishLanguageFormat
             = new EnglishLanguageFormat();
