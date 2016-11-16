@@ -3,6 +3,8 @@ package ca.jbrains.pos.test;
 import ca.jbrains.pos.Display;
 import ca.jbrains.pos.Price;
 
+// REFACTOR This class just composes two actions!
+// Surely we can eliminate it somehow...
 public class CanvasDisplay implements Display {
     private final Canvas canvas;
     private final MessageFormat messageFormat;
