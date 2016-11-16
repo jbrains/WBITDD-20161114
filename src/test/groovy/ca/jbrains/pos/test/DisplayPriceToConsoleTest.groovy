@@ -16,7 +16,7 @@ class DisplayPriceToConsoleTest extends Specification {
     }
 
     @Unroll
-    def "display price of #{price.cents} cents"() {
+    def "display price of #price.centsValue cents"() {
         def canvas = new ByteArrayOutputStream()
 
         given:
