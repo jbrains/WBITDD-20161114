@@ -1,27 +1,20 @@
 package ca.jbrains.pos.test
 
 import spock.lang.Specification
+import spock.lang.Unroll
 
 class FormatMessagesTest extends Specification {
-    def "empty barcode"() {
+    @Unroll
+    def "format #message"() {
         given:
         def format = new EnglishLanguageMessageFormat()
 
-        when:
-        def messageText = format.formatScannedEmptyBarcodeMessage()
+        expect:
+        messageText == action(format)
 
-        then:
-        "Scanning error: empty barcode" == messageText
-
-    }
-    def "barcode not found"() {
-        given:
-        def format = new EnglishLanguageMessageFormat()
-
-        when:
-        def messageText = format.formatProductNotFoundMessage("::barcode not found::")
-
-        then:
-        "Product not found for ::barcode not found::" == messageText
+        where:
+        message             | action                                                                        || messageText
+        "empty barcode"     | { MessageFormat f -> f.formatScannedEmptyBarcodeMessage() }                   || "Scanning error: empty barcode"
+        "product not found" | { MessageFormat f -> f.formatProductNotFoundMessage("::barcode not found::")} || "Product not found for ::barcode not found::"
     }
 }
