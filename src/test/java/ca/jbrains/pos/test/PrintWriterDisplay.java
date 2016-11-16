@@ -6,7 +6,7 @@ import ca.jbrains.pos.Price;
 public class PrintWriterDisplay implements Display {
     @Override
     public void displayPrice(Price price) {
-        System.out.println(String.format("EUR %.2f", price.euro()));
+        System.out.println(new EnglishLanguageFormat().formatPrice(price));
     }
 
     @Override
